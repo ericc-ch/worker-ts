@@ -15,13 +15,13 @@ This package lets you create Worker threads from TypeScript files with some atte
 - Skips build steps in Bun/Deno because they support TypeScript Worker natively
 
 ```typescript
-import { createWorker } from 'worker-ts'
+import { workerTS } from 'worker-ts'
 
 // Automatically skip build on Bun / Deno
-const worker = await createWorker('./worker.ts')
+const worker = await workerTS('./worker.ts')
 
 // Skip build step, then this package basically does nothing
-const worker = await createWorker('./worker.ts', { skipBuild: true })
+const worker = await workerTS('./worker.ts', { skipBuild: true })
 ```
 
 ## Serious Note

@@ -7,10 +7,7 @@ interface CreateWorkerOption {
   skipBuild?: boolean
 }
 
-export async function createWorker(
-  path: string,
-  options: CreateWorkerOption = {},
-) {
+export async function workerTS(path: string, options: CreateWorkerOption = {}) {
   const workerUrl = new URL(path, import.meta.url)
   const skipBuild = options.skipBuild ?? (isBun || isDeno)
 
