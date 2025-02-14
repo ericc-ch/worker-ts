@@ -1,9 +1,35 @@
-# pkg-placeholder
+# worker-ts
 
-_description_
+A probably unnecessary TypeScript utility for creating Worker threads with build support.
 
-> **Note**:
-> Replace `pkg-placeholder` and `_description_` globally to use this template.
+## Why You Probably Don't Need This
+
+You can probably somehow configure the build step to include the worker file and then load that.
+
+I'm too lazy to do that for my side projects, instead I just use either `tsx` / Bun / Deno. And even with `tsx`, Node.js won't let you load TypeScript file for Worker.
+
+## But if you're feeling adventurous...
+
+This package lets you create Worker threads from TypeScript files with some attempted smart handling:
+- Tries to bundle your TS files on the fly for Node.js
+- Skips build steps in Bun/Deno because they support TypeScript Worker natively
+
+```typescript
+import { createWorker } from 'worker-ts'
+
+// The "easy" way (results may vary)
+const worker = await createWorker('./worker.ts')
+
+// Skip the magic, embrace chaos
+const worker = await createWorker('./worker.ts', { skipBuild: true })
+```
+
+## Serious Note
+
+This package is more of an experiment than a production-ready solution. For real applications:
+1. Set up proper build pipelines
+2. Use your bundler's worker plugins
+3. Handle worker compilation during your build step
 
 ## License
 
