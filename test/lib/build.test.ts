@@ -2,7 +2,7 @@ import fs from "node:fs/promises"
 import path from "node:path"
 import { describe, it, expect, afterEach, vi } from "vitest"
 
-import { build } from "../../src/lib/esbuild"
+import { build } from "../../src/lib/build"
 
 const FIXTURES_DIR = path.join(import.meta.dirname, "..", "fixtures")
 
