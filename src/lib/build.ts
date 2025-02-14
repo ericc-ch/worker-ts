@@ -17,6 +17,7 @@ export async function build(entry: string): Promise<string> {
     treeShaking: false,
     logLevel: "silent",
     target: "esnext",
+    platform: "node",
   })
 
   // Get the output file path - it will have the same name as the input file but with .js extension
