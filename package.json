@@ -40,11 +40,11 @@
     "*": "eslint --fix"
   },
   "dependencies": {
-    "citty": "^0.1.6"
+    "esbuild": "^0.25.0"
   },
   "devDependencies": {
-    "@echristian/eslint-config": "^0.0.18",
-    "@types/node": "^22.13.1",
+    "@echristian/eslint-config": "^0.0.20",
+    "@types/node": "^22.13.4",
     "bumpp": "^10.0.3",
     "eslint": "^9.20.1",
     "lint-staged": "^15.4.3",
