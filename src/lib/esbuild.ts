@@ -6,7 +6,7 @@ import path from "node:path"
 export async function build(entry: string): Promise<string> {
   const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), "worker-ts-"))
 
-  const result = await esbuild.build({
+  await esbuild.build({
     entryPoints: [entry],
     outdir: tmpDir,
     format: "esm",
@@ -19,11 +19,9 @@ export async function build(entry: string): Promise<string> {
     target: "esnext",
   })
 
-  if (!result.outputFiles) {
-    throw new Error("No output files")
-  }
+  // Get the output file path - it will have the same name as the input file but with .js extension
+  const outputFileName = path.basename(entry, path.extname(entry)) + ".js"
+  const outputPath = path.join(tmpDir, outputFileName)
 
-  const [out] = result.outputFiles
-
-  return out.path
+  return outputPath
 }
