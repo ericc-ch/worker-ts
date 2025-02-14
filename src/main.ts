@@ -8,11 +8,9 @@ interface CreateWorkerOption {
 }
 
 export async function workerTS(path: string, options: CreateWorkerOption = {}) {
-  const workerUrl = new URL(path, import.meta.url)
   const skipBuild = options.skipBuild ?? (isBun || isDeno)
 
-  const workerPath =
-    skipBuild ? workerUrl.pathname : await build(workerUrl.pathname)
+  const workerPath = skipBuild ? path : await build(path)
 
   return new Worker(workerPath)
 }
