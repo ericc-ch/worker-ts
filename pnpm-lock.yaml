@@ -11,6 +11,9 @@ importers:
       esbuild:
         specifier: ^0.25.0
         version: 0.25.0
+      std-env:
+        specifier: ^3.8.0
+        version: 3.8.0
     devDependencies:
       '@echristian/eslint-config':
         specifier: ^0.0.20

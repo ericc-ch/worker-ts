@@ -1,13 +1,15 @@
 {
-  "name": "@echristian/pkg-placeholder",
+  "name": "worker-ts",
   "version": "0.0.0",
-  "description": "_description_",
-  "keywords": [],
-  "homepage": "https://github.com/ericc-ch/pkg-placeholder",
-  "bugs": "https://github.com/ericc-ch/pkg-placeholder/issues",
+  "description": "Run TypeScript Worker in Node.js, the ooga booga way.",
+  "keywords": [
+    "worker"
+  ],
+  "homepage": "https://github.com/ericc-ch/worker-ts",
+  "bugs": "https://github.com/ericc-ch/worker-ts/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ericc-ch/pkg-placeholder.git"
+    "url": "git+https://github.com/ericc-ch/worker-ts.git"
   },
   "author": "Erick Christian <erickchristian48@gmail.com>",
   "type": "module",
@@ -16,9 +18,6 @@
       "types": "./dist/main.d.ts",
       "default": "./dist/main.js"
     }
-  },
-  "bin": {
-    "@echristian/pkg-placeholder": "./dist/cli.js"
   },
   "files": [
     "dist"
@@ -29,7 +28,7 @@
     "prepack": "pnpm run build",
     "prepare": "simple-git-hooks",
     "release": "bumpp && pnpm publish --access public",
-    "start": "tsx src/cli.ts",
+    "start": "tsx src/main.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
@@ -40,7 +39,8 @@
     "*": "eslint --fix"
   },
   "dependencies": {
-    "esbuild": "^0.25.0"
+    "esbuild": "^0.25.0",
+    "std-env": "^3.8.0"
   },
   "devDependencies": {
     "@echristian/eslint-config": "^0.0.20",
