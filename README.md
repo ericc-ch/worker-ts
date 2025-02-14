@@ -17,10 +17,10 @@ This package lets you create Worker threads from TypeScript files with some atte
 ```typescript
 import { createWorker } from 'worker-ts'
 
-// The "easy" way (results may vary)
+// Automatically skip build on Bun / Deno
 const worker = await createWorker('./worker.ts')
 
-// Skip the magic, embrace chaos
+// Skip build step, then this package basically does nothing
 const worker = await createWorker('./worker.ts', { skipBuild: true })
 ```
 
