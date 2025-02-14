@@ -1,6 +1,6 @@
 {
   "name": "worker-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Run TypeScript Worker in Node.js, the ooga booga way.",
   "keywords": [
     "worker"
